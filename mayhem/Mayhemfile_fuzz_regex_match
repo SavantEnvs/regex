@@ -1,0 +1,9 @@
+# Mayhem target: regex's fuzz_regex_match fuzzer (libFuzzer, built by mayhem/build.sh via cargo-fuzz at /mayhem/fuzz_regex_match).
+# origin: https://app.mayhem.security/mayhemheroes/regex/fuzz-regex-match/11
+project: savantenvs/regex
+target: fuzz-regex-match-buggy-mhh-run-11
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+cmds:
+  - cmd: /mayhem/fuzz_regex_match
+    libfuzzer: true
