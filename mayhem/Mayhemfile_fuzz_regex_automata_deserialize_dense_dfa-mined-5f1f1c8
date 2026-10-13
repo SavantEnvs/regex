@@ -1,0 +1,10 @@
+# Mayhem target (mining): regex's fuzz_regex_automata_deserialize_dense_dfa fuzzer on the commit before upstream's dense-DFA deserialization fix (libFuzzer, built by mayhem/build.sh via cargo-fuzz at /mayhem/fuzz_regex_automata_deserialize_dense_dfa).
+# seed-from: https://app.mayhem.security/savantenvs/regex/fuzz-regex-automata-deserialize-dense-dfa
+project: savantenvs/regex
+target: fuzz_regex_automata_deserialize_dense_dfa-mined-5f1f1c8
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_regex_automata_deserialize_dense_dfa-mined-5f1f1c8/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_regex_automata_deserialize_dense_dfa
+    libfuzzer: true
