@@ -1,0 +1,10 @@
+# Mayhem target (mining): regex's fuzz_regex_lite_match fuzzer on the commit before upstream's regex-lite stack-overflow fix (libFuzzer, built by mayhem/build.sh via cargo-fuzz at /mayhem/fuzz_regex_lite_match).
+# seed-from: https://app.mayhem.security/savantenvs/regex/fuzz-regex-lite-match
+project: savantenvs/regex
+target: fuzz_regex_lite_match-mined-5dff4bd
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_regex_lite_match-mined-5dff4bd/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_regex_lite_match -max_len=16777216
+    libfuzzer: true
